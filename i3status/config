@@ -1,0 +1,31 @@
+order += "wireless _first_"
+order += "ethernet _first_"
+order += "battery 0"
+order += "memory"
+order += "time"
+
+wireless _first_ {
+    format_up = "🛜 %ip"
+    format_down = "🛜 down"
+}
+
+ethernet _first_ {
+    format_up = "🐈 %ip"
+    format_down = "🐈 down"
+}
+
+battery 0 {
+    format = "⚡ %status %percentage"
+    format_down = "No battery"
+    last_full_capacity = true
+}
+
+memory {
+    format = "🐏 %used / %total"
+    threshold_degraded = "10%"
+    format_degraded = "🐏⚠️  %used / %total"
+}
+
+time {
+    format = "📆 %a %b %d 🕓 %I:%M %p"
+}
